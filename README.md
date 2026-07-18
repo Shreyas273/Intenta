@@ -11,19 +11,16 @@ The project combines traditional NLP, semantic embeddings, vector search, and RE
 ## Live Demo
 
 Landing page (Vercel):
-https://intenta.vercel.app/
-*(Update this URL after your first Vercel deploy.)*
+https://intenta-woad.vercel.app/
 
 API Base URL (Render):
-https://intenta-api-3r59.onrender.com/
+https://intenta-api-kj6k.onrender.com/
 
 Swagger Documentation:
-https://intenta-api-3r59.onrender.com/docs
+https://intenta-api-kj6k.onrender.com/docs
 
 Health Check:
-https://intenta-api-3r59.onrender.com/health
-
-After you create a new Render service from this repo, replace the API URLs above (and in `web/config.js`) with your service hostname.
+https://intenta-api-kj6k.onrender.com/health
 
 ---
 
