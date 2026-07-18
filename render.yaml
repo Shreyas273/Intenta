@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: intenta-api
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    autoDeploy: true

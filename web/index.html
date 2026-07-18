@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Intenta — Intent Classification & Hybrid Retrieval</title>
+  <meta name="description" content="Classify support intents and retrieve domain knowledge with hybrid FAISS + BM25 search." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <p class="brand">Intenta</p>
+      <h1 class="headline">Know the intent.<br />Find the answer.</h1>
+      <p class="lede">
+        Multilingual intent classification with hybrid retrieval for developer support queries.
+      </p>
+      <div class="cta-group">
+        <a class="cta cta-primary" id="link-docs" href="#" target="_blank" rel="noopener">Open API docs</a>
+        <a class="cta cta-ghost" id="link-health" href="#" target="_blank" rel="noopener">Health check</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="pipeline">
+        <span>Query</span>
+        <span class="arrow">→</span>
+        <span>Classify</span>
+        <span class="arrow">→</span>
+        <span>Retrieve</span>
+        <span class="arrow">→</span>
+        <span>Respond</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="section try">
+    <h2>Try a prediction</h2>
+    <p class="section-lede">Send a query to the live Render API.</p>
+    <pre class="code" id="curl-snippet"></pre>
+    <p class="api-base">API base: <a id="link-api" href="#" target="_blank" rel="noopener"></a></p>
+  </section>
+
+  <footer class="footer">
+    <span>Intenta</span>
+    <span class="sep">·</span>
+    <a href="https://github.com/Shreyas273/Intenta" target="_blank" rel="noopener">GitHub</a>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

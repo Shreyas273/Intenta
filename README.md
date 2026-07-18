@@ -10,7 +10,11 @@ The project combines traditional NLP, semantic embeddings, vector search, and RE
 
 ## Live Demo
 
-API Base URL:
+Landing page (Vercel):
+https://intenta.vercel.app/
+*(Update this URL after your first Vercel deploy.)*
+
+API Base URL (Render):
 https://intenta-api-3r59.onrender.com/
 
 Swagger Documentation:
@@ -18,6 +22,35 @@ https://intenta-api-3r59.onrender.com/docs
 
 Health Check:
 https://intenta-api-3r59.onrender.com/health
+
+After you create a new Render service from this repo, replace the API URLs above (and in `web/config.js`) with your service hostname.
+
+---
+
+## Deployment
+
+### Render (FastAPI + ML)
+
+The API runs as a Docker web service. Models and FAISS indexes are trained during the image build.
+
+1. Open [Render Dashboard](https://dashboard.render.com/) → **New** → **Blueprint**
+2. Connect GitHub and select `Shreyas273/Intenta`
+3. Confirm `render.yaml` and create the `intenta-api` service
+4. Wait for the first build (torch + sentence-transformers + training; often 10–20+ minutes)
+5. Open `https://<your-service>.onrender.com/health` — expect `{"status":"healthy"}`
+6. Open `/docs` for Swagger
+
+**Manual alternative:** **New** → **Web Service** → connect the repo → Runtime **Docker** → Health Check Path `/health`.
+
+### Vercel (Landing page)
+
+1. Open [Vercel Dashboard](https://vercel.com/new) → **Import** `Shreyas273/Intenta`
+2. Leave framework preset as **Other** (static files via `vercel.json`)
+3. Deploy
+4. Set `window.INTENTA_API_BASE` in [`web/config.js`](web/config.js) to your Render API URL, commit, and redeploy
+5. Update the Landing page URL in this README
+
+**Local preview:** open `web/index.html` in a browser, or from the repo root run any static file server pointed at `web/`.
 
 ---
 
@@ -342,14 +375,11 @@ http://127.0.0.1:8000/docs
 
 ## Future Improvements
 
-* Docker Deployment
-* CI/CD Pipeline
 * MLflow Integration
 * PostgreSQL Storage
 * Automated Retraining
 * Monitoring & Observability
 * Model Registry
-* Cloud Deployment
 
 ---
 
@@ -362,4 +392,4 @@ Machine Learning Engineer | MLOps Enthusiast
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-API-green)
 ![Docker](https://img.shields.io/badge/Docker-Containerized-blue)
-![CI](https://github.com/Kevinnn19/Intenta/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/Shreyas273/Intenta/actions/workflows/ci.yml/badge.svg)
