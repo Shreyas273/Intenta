@@ -1,0 +1,5 @@
+# Only ship the static landing page to Vercel (not the Python ML API)
+/*
+!web
+!web/**
+!vercel.json

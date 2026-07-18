@@ -44,11 +44,16 @@ The API runs as a Docker web service. Models and FAISS indexes are trained durin
 
 ### Vercel (Landing page)
 
+Vercel hosts **only** the static site in `web/`. The Python API stays on Render (do not let Vercel install `requirements.txt`).
+
 1. Open [Vercel Dashboard](https://vercel.com/new) → **Import** `Shreyas273/Intenta`
-2. Leave framework preset as **Other** (static files via `vercel.json`)
-3. Deploy
-4. Set `window.INTENTA_API_BASE` in [`web/config.js`](web/config.js) to your Render API URL, commit, and redeploy
-5. Update the Landing page URL in this README
+2. Set **Root Directory** to `web` (Important → Edit)
+3. Framework Preset: **Other**
+4. Deploy
+5. Set `window.INTENTA_API_BASE` in [`web/config.js`](web/config.js) to your Render API URL, commit, and redeploy
+6. Update the Landing page URL in this README
+
+If a previous deploy failed with a Python bundle size error, open the project → **Settings** → **General** → set Root Directory to `web`, then **Redeploy**.
 
 **Local preview:** open `web/index.html` in a browser, or from the repo root run any static file server pointed at `web/`.
 
